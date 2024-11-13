@@ -1,13 +1,1 @@
-[ {
-  "titulo" : "Dune",
-  "autor" : "Frank Herbert",
-  "anio" : 1965
-}, {
-  "titulo" : "Neuromancer",
-  "autor" : "William Gibson",
-  "anio" : 1984
-}, {
-  "titulo" : "Foundation",
-  "autor" : "Isaac Asimov",
-  "anio" : 1951
-} ]
+[{"title":"Dune Messiah","author":"Frank Herbert","year":1969},{"title":"Children of Dune","author":"Frank Herbert","year":1976}]
