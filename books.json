@@ -1,0 +1,13 @@
+[ {
+  "titulo" : "Dune",
+  "autor" : "Frank Herbert",
+  "anio" : 1965
+}, {
+  "titulo" : "Neuromancer",
+  "autor" : "William Gibson",
+  "anio" : 1984
+}, {
+  "titulo" : "Foundation",
+  "autor" : "Isaac Asimov",
+  "anio" : 1951
+} ]
