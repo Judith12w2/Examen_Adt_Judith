@@ -4,14 +4,18 @@ import java.io.Serializable;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class Book {
-    @JsonProperty("title")  // Cambiar el nombre del campo JSON a 'title'
+import com.fasterxml.jackson.annotation.JsonProperty;
+import java.io.Serializable;
+
+public class Book implements Serializable {
+
+    @JsonProperty("titulo")  // Mapear a Titulo
     private String title;
 
-    @JsonProperty("author")
+    @JsonProperty("autor")  // Mapear a Autor
     private String author;
 
-    @JsonProperty("year")
+    @JsonProperty("anio")   // Mapear a Anio
     private int year;
 
     // Constructor, getters y setters
@@ -21,7 +25,7 @@ public class Book {
         this.year = year;
     }
 
-    // Constructor vacio
+    // Constructor vacío (Por si las moscas)
     public Book() {}
 
     @Override
@@ -41,3 +45,4 @@ public class Book {
         return year;
     }
 }
+

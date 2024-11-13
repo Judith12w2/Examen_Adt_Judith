@@ -49,9 +49,9 @@ public class BookManager {
 
     // Guarda los libros en formato json
     public void saveBooksToJsonFile(String filePath) {
-        ObjectMapper mapper = new ObjectMapper();
+        ObjectMapper objectMapper = new ObjectMapper();
         try {
-            mapper.writeValue(new File(filePath), books);
+            objectMapper.writeValue(new File(filePath), books);
             System.out.println("Libros guardados en formato JSON en " + filePath);
         } catch (IOException e) {
             System.err.println("Error al guardar los libros en JSON: " + e.getMessage());
@@ -60,14 +60,19 @@ public class BookManager {
 
     // Carga los libros desde un archivo json
     public void loadBooksFromJsonFile(String filePath) {
-        ObjectMapper mapper = new ObjectMapper();
+        ObjectMapper objectMapper = new ObjectMapper();
         try {
-            books = mapper.readValue(new File(filePath), new TypeReference<List<Book>>() {});
-            System.out.println("Libros cargados desde JSON.");
+            // Leer el archivo JSON y convertirlo a una lista de libros
+            books = objectMapper.readValue(new File(filePath), new TypeReference<List<Book>>() {});
+            System.out.println("Libros cargados:");
+            for (Book book : books) {
+                System.out.println(book);
+            }
         } catch (IOException e) {
-            System.err.println("Error al cargar los libros desde JSON: " + e.getMessage());
+            System.out.println("Error al cargar los libros desde JSON: " + e.getMessage());
         }
     }
+
 
     // Método para guardar los libros en un archivo binario
     public void saveBooksToBinaryFile(String filePath) {
@@ -75,7 +80,7 @@ public class BookManager {
             out.writeObject(books);
             System.out.println("Libros guardados en formato binario en " + filePath);
         } catch (IOException e) {
-            System.err.println("Error al guardar los libros en formato binario: " + e.getMessage());
+            System.out.println("Error al guardar los libros en formato binario: " + e.getMessage());
         }
     }
 
@@ -85,7 +90,7 @@ public class BookManager {
             books = (List<Book>) in.readObject();
             System.out.println("Libros cargados desde el archivo binario.");
         } catch (IOException | ClassNotFoundException e) {
-            System.err.println("Error al cargar los libros desde el archivo binario: " + e.getMessage());
+            System.out.println("Error al cargar los libros desde el archivo binario: " + e.getMessage());
         }
     }
 }
